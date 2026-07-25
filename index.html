@@ -63,6 +63,8 @@ position:sticky;
 
 top:0;
 
+z-index:50;
+
 }
 
 
@@ -277,6 +279,266 @@ text-align:center;
 padding:40px;
 
 color:#66ff99;
+
+}
+
+
+/* ================= BOTÕES FLUTUANTES ================= */
+
+.fab-container{
+
+position:fixed;
+
+right:25px;
+
+bottom:25px;
+
+display:flex;
+
+flex-direction:column;
+
+gap:15px;
+
+align-items:flex-end;
+
+z-index:1000;
+
+}
+
+
+.fab{
+
+width:60px;
+
+height:60px;
+
+border-radius:50%;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+font-size:28px;
+
+cursor:pointer;
+
+border:none;
+
+box-shadow:0 4px 15px rgba(0,0,0,.4);
+
+transition:.25s;
+
+}
+
+
+.fab:hover{
+
+transform:scale(1.1);
+
+}
+
+
+/* WhatsApp */
+
+.fab-whats{
+
+background:#25D366;
+
+color:white;
+
+text-decoration:none;
+
+}
+
+
+/* NEXORA */
+
+.fab-nexora{
+
+background:linear-gradient(135deg,#00ff66,#007a33);
+
+color:black;
+
+}
+
+
+/* ================= CHAT NEXORA ================= */
+
+.nexora-box{
+
+position:fixed;
+
+right:25px;
+
+bottom:100px;
+
+width:320px;
+
+max-height:420px;
+
+background:#0b1f12;
+
+border:2px solid #00ff66;
+
+border-radius:18px;
+
+display:none;
+
+flex-direction:column;
+
+overflow:hidden;
+
+z-index:1000;
+
+box-shadow:0 0 25px rgba(0,255,102,.3);
+
+}
+
+
+.nexora-box.aberto{
+
+display:flex;
+
+}
+
+
+.nexora-head{
+
+background:linear-gradient(135deg,#00ff66,#005522);
+
+padding:14px 16px;
+
+font-weight:bold;
+
+color:#04220f;
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+}
+
+
+.nexora-fechar{
+
+cursor:pointer;
+
+font-weight:bold;
+
+background:none;
+
+border:none;
+
+color:#04220f;
+
+font-size:18px;
+
+}
+
+
+.nexora-msgs{
+
+flex:1;
+
+padding:14px;
+
+overflow-y:auto;
+
+display:flex;
+
+flex-direction:column;
+
+gap:10px;
+
+font-size:14px;
+
+}
+
+
+.msg{
+
+padding:10px 12px;
+
+border-radius:12px;
+
+max-width:80%;
+
+line-height:1.4;
+
+}
+
+
+.msg.bot{
+
+background:#193d22;
+
+color:#e6ffe9;
+
+align-self:flex-start;
+
+border-bottom-left-radius:2px;
+
+}
+
+
+.msg.user{
+
+background:#00ff66;
+
+color:#04220f;
+
+align-self:flex-end;
+
+border-bottom-right-radius:2px;
+
+}
+
+
+.nexora-input{
+
+display:flex;
+
+border-top:1px solid #193d22;
+
+}
+
+
+.nexora-input input{
+
+flex:1;
+
+padding:12px;
+
+background:#102316;
+
+border:none;
+
+color:white;
+
+outline:none;
+
+font-size:14px;
+
+}
+
+
+.nexora-input button{
+
+background:#00ff66;
+
+border:none;
+
+padding:0 18px;
+
+font-weight:bold;
+
+cursor:pointer;
+
+color:#04220f;
 
 }
 
@@ -520,6 +782,162 @@ target="_blank">
 © 2026 Cauapremion2020 Roblox Hub
 
 </footer>
+
+
+
+
+<!-- ================= BOTÕES FLUTUANTES ================= -->
+
+<div class="fab-container">
+
+<button class="fab fab-nexora" onclick="toggleNexora()" title="Falar com NEXORA">🤖</button>
+
+<a class="fab fab-whats"
+href="https://wa.me/5500000000000?text=Ol%C3%A1%2C%20vim%20do%20site%20do%20Cauapremion2020!"
+target="_blank"
+title="Chamar no WhatsApp">
+
+<svg viewBox="0 0 32 32" width="30" height="30" fill="white">
+<path d="M16 2C8.3 2 2 8.3 2 16c0 2.8.8 5.5 2.3 7.8L2 30l6.4-2.2C10.6 29.2 13.2 30 16 30c7.7 0 14-6.3 14-14S23.7 2 16 2zm0 25.5c-2.4 0-4.7-.7-6.7-1.9l-.5-.3-4.1 1.4 1.4-4-.3-.5C4.5 20.2 3.8 18.1 3.8 16 3.8 9.3 9.3 3.8 16 3.8S28.2 9.3 28.2 16 22.7 27.5 16 27.5zm7-8.1c-.4-.2-2.3-1.1-2.6-1.3-.4-.1-.6-.2-.9.2-.3.4-1 1.3-1.3 1.5-.2.3-.5.3-.9.1-.4-.2-1.7-.6-3.2-2-1.2-1.1-2-2.4-2.2-2.8-.2-.4 0-.6.2-.8.2-.2.4-.5.6-.7.2-.2.3-.4.4-.7.1-.3.1-.5 0-.7-.1-.2-.9-2.1-1.2-2.9-.3-.7-.6-.6-.9-.7h-.7c-.3 0-.7.1-1 .5-.4.4-1.4 1.3-1.4 3.2s1.4 3.7 1.6 4c.2.3 2.8 4.2 6.7 5.9.9.4 1.7.6 2.3.8.9.3 1.8.2 2.4.1.7-.1 2.3-.9 2.6-1.9.3-.9.3-1.7.2-1.9-.1-.2-.4-.3-.8-.5z"/>
+</svg>
+
+</a>
+
+</div>
+
+
+
+
+<!-- ================= CHAT NEXORA ================= -->
+
+<div class="nexora-box" id="nexoraBox">
+
+<div class="nexora-head">
+<span>🤖 NEXORA</span>
+<button class="nexora-fechar" onclick="toggleNexora()">✕</button>
+</div>
+
+<div class="nexora-msgs" id="nexoraMsgs">
+
+<div class="msg bot">Oi! Eu sou a NEXORA, a IA do canal do Cauapremion2020 🎮. Pode me perguntar sobre os jogos, vídeos ou o canal!</div>
+
+</div>
+
+<div class="nexora-input">
+<input type="text" id="nexoraInput" placeholder="Digite sua mensagem..." onkeydown="if(event.key==='Enter')enviarNexora()">
+<button onclick="enviarNexora()">➤</button>
+</div>
+
+</div>
+
+
+
+
+<script>
+
+function toggleNexora(){
+
+const box = document.getElementById('nexoraBox');
+
+box.classList.toggle('aberto');
+
+}
+
+
+function enviarNexora(){
+
+const input = document.getElementById('nexoraInput');
+
+const texto = input.value.trim();
+
+if(texto === '') return;
+
+
+adicionarMensagem(texto, 'user');
+
+input.value = '';
+
+
+setTimeout(() => {
+
+const resposta = gerarResposta(texto);
+
+adicionarMensagem(resposta, 'bot');
+
+}, 500);
+
+}
+
+
+function adicionarMensagem(texto, tipo){
+
+const msgs = document.getElementById('nexoraMsgs');
+
+const div = document.createElement('div');
+
+div.className = 'msg ' + tipo;
+
+div.textContent = texto;
+
+msgs.appendChild(div);
+
+msgs.scrollTop = msgs.scrollHeight;
+
+}
+
+
+function gerarResposta(texto){
+
+const t = texto.toLowerCase();
+
+
+if(t.includes('oi') || t.includes('olá') || t.includes('ola')){
+
+return 'Oi! Como posso te ajudar hoje? 😄';
+
+}
+
+
+if(t.includes('jogo') || t.includes('roblox')){
+
+return 'Os jogos favoritos do Cauapremion2020 são Murder Mystery 2, Fisch e o obby de fuga! Dá uma olhada na seção 🎮 Jogos Favoritos.';
+
+}
+
+
+if(t.includes('video') || t.includes('vídeo') || t.includes('canal') || t.includes('youtube')){
+
+return 'Você encontra Desafios, Momentos Engraçados e Séries na seção 📺 Conteúdos do Canal. E não esquece de se inscrever no YouTube!';
+
+}
+
+
+if(t.includes('whatsapp') || t.includes('zap') || t.includes('contato')){
+
+return 'Você pode falar direto pelo botão verde do WhatsApp no canto da tela! 📲';
+
+}
+
+
+if(t.includes('quem é você') || t.includes('quem e voce') || t.includes('nexora')){
+
+return 'Eu sou a NEXORA, a inteligência artificial que ajuda os fãs do Cauapremion2020 por aqui! 🤖✨';
+
+}
+
+
+if(t.includes('obrigado') || t.includes('valeu')){
+
+return 'De nada! Qualquer coisa é só chamar 💚';
+
+}
+
+
+return 'Hmm, não entendi muito bem 🤔 Você pode perguntar sobre os jogos, os vídeos do canal ou como falar com o Cauapremion2020!';
+
+}
+
+</script>
 
 
 
